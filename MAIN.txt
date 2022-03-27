@@ -1,0 +1,187 @@
+import React ,{Component} from 'react';
+import {TouchableOpacity, View, Text, TextInput, Image, StyleSheet} from 'react-native';
+
+export default class App extends Component{
+
+  // constructor(props){
+  //   super(props)
+  //   this.state={
+  //     username : "",
+  //     password : ""
+  //   }
+  // }
+
+  // validate_field=()=>{
+  //   const {username, password} = this.state
+  //   if (username == ""){
+  //     alert("Username jangan dikosongi")
+  //     return false
+  //   } else if(password == ""){
+  //     alert("Password jangan dikosongi")
+  //     return false  
+  //   }
+  //   return true
+  // }
+
+  making_api_call=()=>{
+    if(this.validate_field()){
+          alert("Berhasil, Lanjtukan Pembayaran")
+    }
+  }
+
+render(){
+  return(
+    <View style={styles.background}>
+      <></> 
+    
+       
+      <View style={styles.row}><
+        Text style={{textAlign: 'center'}}>Pelabuhan Awal</Text>
+        <View style={styles.rowDalem}>
+            <Image
+            style={styles.icon}
+            source = {require('./assets/images/boat.png')}
+            />
+            <TextInput placeholder={"Pilih pelabuhan awal"}
+            onChangeText={(value)=> this.setState({username : value})}
+            style={styles.textIcon}
+          />
+        </View>
+      </View>
+
+      <View style={styles.row}><
+        Text style={{textAlign: 'center'}}>Pelabuhan Tujuan</Text>
+        <View style={styles.rowDalem}>
+            <Image
+            style={styles.icon}
+            source = {require('./assets/images/boat.png')}
+            />
+            <TextInput placeholder={"Pilih pelabuhan awal"}
+            onChangeText={(value)=> this.setState({username : value})}
+            style={styles.textIcon}
+          />
+        </View>
+      </View>
+
+      <View style={styles.row}><
+        Text style={{textAlign: 'center'}}>Kelas Layanan</Text>
+        <View style={styles.rowDalem}>
+            <Image
+              style={styles.icon}
+              source = {require('./assets/Images/passenger.png')}
+            />
+            <TextInput placeholder={"Pilih pelabuhan awal"}
+            onChangeText={(value)=> this.setState({username : value})}
+            style={styles.textIcon}
+          />
+        </View>
+      </View>
+
+      <View style={styles.row}><
+        Text style={{textAlign: 'center'}}>Tanggal Masuk Pelabuhan</Text>
+        <View style={styles.rowDalem}>
+            <Image
+              style={styles.icon}
+              source = {require('./assets/Images/calendar.png')}
+            />
+            <TextInput placeholder={"Pilih pelabuhan awal"}
+            onChangeText={(value)=> this.setState({username : value})}
+            style={styles.textIcon}
+          />
+        </View>
+      </View>
+
+      <View style={styles.row}>
+        <Text style={{textAlign: 'center'}}>Jam Masuk Pelabuhan</Text>
+        <View style={styles.rowDalem}>
+            <Image
+              style={styles.icon}
+              source = {require('./assets/Images/clock.png')}
+            />
+            <TextInput placeholder={"Pilih pelabuhan awal"}
+            onChangeText={(value)=> this.setState({username : value})}
+            style={styles.textIcon}
+          />
+        </View>
+      </View>
+      
+         
+    <View style={{marginTop : "10%" , width : "80%"}}>
+      <TouchableOpacity 
+      style={{
+        borderWidth : 1,
+        height : 30,
+        width : "35%",
+        justifyContent : "center",
+        alignItem : "center",
+        borderRadius : 40 ,
+            backgroundColor : "#f57c00" , alignSelf : "center" , textAlign : "center"
+            }}
+            onPress={()=>this.making_api_call()}
+            >       
+                  <Text style={{color : "white", alignSelf : "center"}}> BUAT TIKET </Text>
+            </TouchableOpacity>
+    </View>
+    </View>   
+  )
+}
+}
+
+const styles = StyleSheet.create({
+  textinput:{
+    height : 42 ,
+    width : "50%",
+    borderWidth : 1, 
+    borderRadius : 10
+  },
+  container:{
+    marginLeft : 50,
+    width : "80%",
+    height : "100%" , 
+    justifyContent :"center" , 
+    alignSelf : "center" , 
+    alignContent : "center" , 
+    alignItems : "left",
+    borderWidth : 3,
+    elevation : 2,
+  },
+  background:{
+    marginLeft : 100,
+    width : "80%" ,
+    height : "100%" , 
+    justifyContent :"center" , 
+    alignSelf : "center" , 
+    alignContent : "center" , 
+    alignItems : "center",
+    borderWidth : 3,
+    elevation : 2,
+    backgroundColor:'#b3e5fc',
+  },
+  subheading:{
+    color:'#9e9e9e',
+    alignSelf:'left'
+  },
+  icon:{
+    width:25,
+    height:25,
+    marginLeft: 15
+  },
+  row: {
+    height: 50, 
+    width: 300,
+    marginTop: 30,
+  },
+  rowDalem: {
+    borderWidth: 1, 
+    flex: 1, 
+    flexDirection: 'row', 
+    borderRadius: 10, 
+    alignItems: 'center',
+  },
+  textIcon: {
+    marginLeft: 10, 
+    borderRadius: 5, 
+    flex: 1
+  }
+
+});

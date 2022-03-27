@@ -1,20 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Beranda from './assets/components/Beranda';
+import DaftarPemesanan from './assets/components/DaftarPemesanan';
+import PesananSaya from './assets/components/PesananSaya';
+import DaftarPembatalan from './assets/components/DaftarPembatalan';
+import Lainnya from './assets/components/Lainnya';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <NavigationContainer>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen
+        name="Beranda"
+        component={Beranda}
+      />
+      <Stack.Screen
+        name="DaftarPemesanan"
+        component={DaftarPemesanan}
+      />
+      <Stack.Screen
+        name="PesananSaya"
+        component={PesananSaya}
+      />
+      <Stack.Screen
+        name="DaftarPembatalan"
+        component={DaftarPembatalan}
+      />
+      <Stack.Screen
+        name="Lainnya"
+        component={Lainnya}
+      />
+    </Stack.Navigator>
+    </NavigationContainer>
+  )
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

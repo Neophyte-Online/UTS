@@ -1,0 +1,22 @@
+const styles = StyleSheet.create({
+  main:{
+    marginLeft : 100,
+    width : "80%" ,
+    height : "100%" , 
+    justifyContent :"center" , 
+    alignSelf : "center" , 
+    alignContent : "center" , 
+    alignItems : "center",
+    borderWidth : 3,
+    elevation : 2,
+    backgroundColor:'#b3e5fc',
+  },
+  header:{
+    flex: 0.2,
+    backgroundColor: '#3d5afe',
+    paddingVertical: 20,
+    JustifyContent: "center",
+    alignItems: 'center',
+    elevation: 5,
+  },
+});
